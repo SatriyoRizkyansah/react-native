@@ -1,14 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StatusBar} from 'react-native';
 
 const App = () => {
   return (
-    <View>
-      <View style={{backgroundColor: 'darkblue', height: 100, elevation: 15}}>
+    <View style={{flex: 1, backgroundColor: '#282c34'}}>
+      <StatusBar barStyle={'light-content'} backgroundColor={'#21242b'} />
+      <View style={{backgroundColor: '#21242b', height: 100, elevation: 15}}>
         <Text
           style={{
             textAlign: 'center',
             fontSize: 20,
+            fontWeight: 'bold',
             color: 'white',
             marginTop: 40,
           }}>
