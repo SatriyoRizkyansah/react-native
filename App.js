@@ -25,6 +25,31 @@ const App = () => {
         }}>
         <Image
           source={require('./src/images/kucing.jpg')}
+          style={{
+            width: 250,
+            height: 250,
+            marginTop: 10,
+            marginBottom: 10,
+            marginLeft: 10,
+            marginRight: 10,
+
+            borderRadius: 250 / 2,
+            // borderTopRightRadius: 50,
+            borderWidth: 5,
+            borderColor: '#fff',
+          }}
+        />
+      </View>
+
+      <View
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Image
+          source={{
+            uri: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          }}
           style={{width: 250, height: 250}}
         />
       </View>
