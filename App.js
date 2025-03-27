@@ -1,31 +1,21 @@
 import {useEffect, useState} from 'react';
-import {Alert, StatusBar, Text, TouchableOpacity, View} from 'react-native';
+import {Alert, Text, TouchableOpacity, View} from 'react-native';
 
 const App = () => {
-  const halo = () => {
-    Alert.alert('Hello Kamu');
-  };
-  return (
-    <View style={{flex: 1, backgroundColor: '#282c34'}}>
-      <StatusBar barStyle={'light-content'} backgroundColor={'#21242b'} />
+  const [saldo, setSaldo] = useState(100000);
 
-      <TouchableOpacity
-        style={{
-          marginHorizontal: 'auto',
-          width: '90%',
-          backgroundColor: '#51a4f1',
-          paddingTop: 20,
-          paddingBottom: 20,
-          marginTop: 60,
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: 10,
-          elevation: 3,
-        }}
-        onPress={halo}>
-        <Text style={{color: 'white', fontWeight: 'bold', fontSize: 20}}>
-          Registrasi
-        </Text>
+  const hitungDiskon = () => {
+    let perhitungan;
+    perhitungan = saldo - 10000;
+    setSaldo(perhitungan);
+    // Alert.alert('saldo saya' + saldo);
+  };
+
+  return (
+    <View style={{marginTop: '100'}}>
+      <Text>{saldo}</Text>
+      <TouchableOpacity onPress={hitungDiskon}>
+        <Text>Hitung Diskon</Text>
       </TouchableOpacity>
     </View>
   );
