@@ -1,7 +1,9 @@
 import {useEffect, useState} from 'react';
 import {
+  Image,
   ScrollView,
   StatusBar,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
@@ -16,12 +18,21 @@ const App = () => {
     <ScrollView>
       <View style={{flex: 1, justifyContent: 'center'}}>
         <StatusBar backgroundColor={'#fafafa'} barStyle={'dark-content'} />
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Image
+            source={require('./src/images/kucing.jpg')}
+            style={styles.foto}
+          />
+        </View>
         <Text
           style={{
             textAlign: 'center',
             fontSize: 20,
             fontWeight: 'bold',
-            marginTop: 70,
           }}>
           Login
         </Text>
@@ -58,17 +69,7 @@ const App = () => {
           secureTextEntry
         />
 
-        <TouchableOpacity
-          style={{
-            backgroundColor: '#76d1ff',
-            marginVertical: 20,
-            paddingVertical: 12,
-            marginHorizontal: 20,
-            justifyContent: 'center',
-            borderRadius: 9,
-            elevation: 3,
-            textAlign: 'center',
-          }}>
+        <TouchableOpacity style={styles.buttonLogin}>
           <Text
             style={{
               color: 'white',
@@ -79,9 +80,45 @@ const App = () => {
             Login
           </Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.buttonLogin, {backgroundColor: 'red'}]}>
+          <Text
+            style={{
+              color: 'white',
+              textAlign: 'center',
+              fontWeight: 'bold',
+              fontSize: 18,
+            }}>
+            Register
+          </Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  foto: {
+    width: 100,
+    height: 100,
+    marginLeft: 10,
+    marginRight: 10,
+    borderRadius: 250 / 2,
+    borderWidth: 5,
+    borderColor: '#fff',
+    marginTop: 70,
+  },
+  buttonLogin: {
+    backgroundColor: '#76d1ff',
+    marginVertical: 20,
+    paddingVertical: 12,
+    marginHorizontal: 20,
+    justifyContent: 'center',
+    borderRadius: 9,
+    elevation: 3,
+    textAlign: 'center',
+  },
+});
 
 export default App;
