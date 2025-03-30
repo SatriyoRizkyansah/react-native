@@ -11,6 +11,7 @@ import {
   Button,
   Alert,
   FlatList,
+  ToastAndroid,
 } from 'react-native';
 
 const App = () => {
@@ -41,10 +42,12 @@ const App = () => {
   ];
 
   const showAlert = () => {
-    Alert.alert('Data berhasil di update', 'Berhasil di tambahkan', [
-      {text: 'Ok', onPress: () => console.log('Ok')},
-      {text: 'Cancel', onPress: () => console.log('Cancel')},
-    ]);
+    // Alert.alert('Data berhasil di update', 'Berhasil di tambahkan', [
+    //   {text: 'Ok', onPress: () => console.log('Ok')},
+    //   {text: 'Cancel', onPress: () => console.log('Cancel')},
+    // ]);
+
+    ToastAndroid.show('Data berhasil di update', ToastAndroid.SHORT);
   };
 
   return (
