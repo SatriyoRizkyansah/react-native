@@ -40,6 +40,13 @@ const App = () => {
     },
   ];
 
+  const showAlert = () => {
+    Alert.alert('Data berhasil di update', 'Berhasil di tambahkan', [
+      {text: 'Ok', onPress: () => console.log('Ok')},
+      {text: 'Cancel', onPress: () => console.log('Cancel')},
+    ]);
+  };
+
   return (
     // <View style={{marginTop: 100}}>
     //   <StatusBar backgroundColor={'#21252b'} barStyle={'light-content'} />
@@ -73,7 +80,7 @@ const App = () => {
         data={daftarNegara}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item, index}) => (
-          <View
+          <TouchableOpacity
             style={{
               marginHorizontal: 20,
               marginTop: 10,
@@ -88,7 +95,8 @@ const App = () => {
               // paddingHorizontal: 100,
               flexDirection: 'row',
               borderRadius: 15,
-            }}>
+            }}
+            onPress={showAlert}>
             <Image
               source={{uri: item.image}}
               style={{width: 75, height: 50, borderRadius: 5, marginLeft: 20}}
@@ -99,7 +107,7 @@ const App = () => {
               </Text>
               <Text style={{color: '#fff'}}>{item.deskripsi}</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
